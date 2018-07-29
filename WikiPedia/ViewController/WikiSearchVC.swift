@@ -24,7 +24,7 @@ class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource,
         self.navigationItem.title = "WikiSearch"
         self.navigationItem.hidesBackButton = true
          self.tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        //if you want see data remove commentLine
+        //if you want see data Call below method (Remove below comment line)
 //        coredataFetchData()
     }
     override func viewWillAppear(_ animated: Bool){
@@ -82,6 +82,9 @@ class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource,
             safariVc.view.tintColor = UIColor.red
             safariVc.delegate  = self
             self.present(safariVc, animated: true, completion: nil)
+        }
+        else{
+            print("ImageUrl nil")
         }
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
