@@ -1,0 +1,6 @@
+framework module Pods_WikiPedia {
+  umbrella header "Pods-WikiPedia-umbrella.h"
+
+  export *
+  module * { export * }
+}
