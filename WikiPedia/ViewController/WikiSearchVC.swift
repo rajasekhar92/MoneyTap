@@ -103,6 +103,7 @@ class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource,
         let watchlistData : NSFetchRequest = SearchData.fetchRequest()
         watchlistData.returnsObjectsAsFaults = false
         searchDbData = try! managedContext.fetch(watchlistData)
+        print(searchDbData)
     }
 }
 extension WikiSearchVC : SFSafariViewControllerDelegate{
