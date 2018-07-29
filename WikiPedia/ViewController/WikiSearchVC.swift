@@ -9,8 +9,7 @@
 import UIKit
 import SafariServices
 import CoreData
-class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
-    @IBOutlet var img_blur: UIImageView!
+class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource,UITextFieldDelegate{
     @IBOutlet var txt_keywords: UITextField!
     @IBOutlet var tableView: UITableView!
     var serachResult : SearchResult?
@@ -36,8 +35,14 @@ class WikiSearchVC: UIViewController ,UITableViewDelegate,UITableViewDataSource{
         // Dispose of any resources that can be recreated.
     }
     @IBAction func searchBtn_action(_ sender: UIButton) {
+        txt_keywords.resignFirstResponder()
        sender.flash()
        getData()
+}
+// MARK: - TexfieldDelegate
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
 }
 // MARK: - WebService
  fileprivate func getData(){
